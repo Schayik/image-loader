@@ -1,4 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TODO: improve
+
+## Requirements
+
+This application will use Pixabay API (http://www.pixabay.com) to fetch images. These will have to be rendered on the page. The UI of this page should consist of a grid layout (for example like Pixabay itself or Unsplash). The content should be visible correctly both in desktop and smartphones. The pagination system for the content of the page will be decided by the developer (page numbers, infinite scroll, etc). 
+
+A second page should be implemented. This will consist of a detailed view of one of the pictures. In this one, a bigger version of the image, the name of the photographer, tags, views, downloads and size should be displayed. The UI will be free, so the developer can decide how it should look. As in the previous one, it should be visible both on desktop and smartphones.
+
+```
+Pixabay API documentation: https://pixabay.com/api/docs/
+Pixabay Key: <key>
+```
+
+The provided key will let the developer make 5000 API calls per hour. If while testing it, the developer runs out of requests, feel free to create another Pixabay account and use that access key instead. ​Avoid unnecessary requests where possible.
+ 
+The app should be fully tested (unit tests) and the code should contain comments where appropriate.
+
+For styles the developer can use any library/framework he/she likes.
+
+
+## Development
+
+1. clone repository: `https://github.com/Schayik/image-loader`
+2. open folder
+3. create `.env` and add `REACT_APP_PIXABAY_KEY`
+4. start development: `yarn start`
+
+
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -65,4 +93,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->
