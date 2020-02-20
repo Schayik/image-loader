@@ -7,8 +7,6 @@ import Image from './Image'
 const App = ({ state, dispatch }) => {
 
 	const [page, setPage] = useState(1)
-	
-	console.log(page)
 
   const handleClick = newPage => {
     if (newPage < 1) {

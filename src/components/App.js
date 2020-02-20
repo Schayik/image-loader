@@ -1,5 +1,8 @@
 import React, { useReducer } from 'react';
+import { ThemeProvider } from 'styled-components'
 
+import GlobalStyle from '../styles/Globalstyle'
+import THEME from '../styles/Theme'
 import Router from './Router'
 
 const reducer = (state, action) => {
@@ -18,7 +21,12 @@ const App = () => {
 
   const [state, dispatch] = useReducer(reducer, {})
 
-  return <Router state={state} dispatch={dispatch} />
+  return (
+    <ThemeProvider theme={THEME}>
+      <GlobalStyle />
+      <Router state={state} dispatch={dispatch} />
+    </ThemeProvider> 
+  )
 }
 
 export default App;
