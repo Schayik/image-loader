@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 
-function App() {
+const App = () => {
+  
+
+  const [data, setData] = useState('')
+  // const [buttonClicked, setButtonClicked] = useState(false)
+
+  useEffect(() => {
+    const url = 'https://pixabay.com/api/?key=' + process.env.REACT_APP_PIXABAY_KEY
+
+    const fetchImages = async () => {
+      const response = await axios.get(url)
+      console.log(response.data)
+      setData(response.data)
+    }
+
+    fetchImages()
+  }, [])
+
+  // const fetchImages = async () => {
+  //   const response  = await axios.get(url)
+  //   const data = await response
+  //   setData(data)
+  //   // setButtonClicked(true)
+  // }
+
+  // if (!data) return <div>loading...</div>
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <button onClick={fetchImages}>Load Images</button> */}
+      {data && <p data-testid='json'>{JSON.stringify(data)}</p>}
     </div>
   );
 }
