@@ -8,7 +8,7 @@ const Detail = ({ id }) => {
 
   const image = useSelector(state => state.images[id])
 
-  if (!image) return <CompressWrapper><p>loading...</p></CompressWrapper>
+  if (!image) return <p>loading...</p>
 
   const { largeImageURL, user, tags, views, downloads, imageWidth, imageHeight } = image
 

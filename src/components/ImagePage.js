@@ -47,6 +47,7 @@ const StyledImagePage = styled.div`
   .detail {
     background-color: ${p => p.theme.colors.background};
     border-top: 1px solid ${p => p.theme.colors.border};
+    border-bottom: 1px solid ${p => p.theme.colors.border};
     padding: 1rem 0;
   }
 `

@@ -6,7 +6,6 @@ import Image from './ImagePreview'
 
 const ImageList = ({ page }) => {
   const imageIds = useSelector(state => state.pages[page])
-  console.log(imageIds)
 
   if (!imageIds) return <p>loading...</p>
 
