@@ -1,15 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Compress from './Compress'
+import CompressWrapper from './CompressWrapper'
 
 const PageNavigator = ({ page, handlePageClick }) => (
-  <Compress>
+  <CompressWrapper>
     <StyledNavigator>
-      <button onClick={() => handlePageClick(page - 1)}>Next</button>
+      <button onClick={() => handlePageClick(page - 1)}>Prev</button>
+      <p>{page}</p>
       <button onClick={() => handlePageClick(page + 1)}>Next</button>
     </StyledNavigator>
-  </Compress>
+  </CompressWrapper>
 )
 
 export default PageNavigator
