@@ -18,8 +18,6 @@ const Detail = () => {
 
   if (!image) return <CompressWrapper><p>loading...</p></CompressWrapper>
 
-  console.log(image)
-
   const { largeImageURL, user, tags, views, downloads, imageWidth, imageHeight } = image
 
   return (

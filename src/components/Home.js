@@ -9,16 +9,6 @@ import { addPageAction } from '../resources/images'
 const Home = () => {
 
   const [page, setPage] = useState(1)
-
-  const handlePageClick = newPage => {
-    if (newPage < 1) {
-      setPage(1)
-    } else if (newPage > 25) {
-      setPage(25)
-    } else {
-      setPage(newPage)
-    }
-  }
   
   useEffect(() => {
     addPageAction(page)
@@ -27,7 +17,7 @@ const Home = () => {
   return (
     <main>
       <CompressWrapper>
-        <PageNavigator page={page} handlePageClick={handlePageClick} />
+        <PageNavigator page={page} setPage={setPage} />
       </CompressWrapper>
       <StyledHome>
         <CompressWrapper>

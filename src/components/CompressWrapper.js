@@ -10,7 +10,7 @@ const Compress = ({ children }) => (
 export default Compress
 
 const StyledCompress = styled.div`
-  max-width: 1440px;
+  max-width: ${p => p.theme.media.max};
   margin: 0 auto;
   padding: 0 4rem;
   height: 100%;

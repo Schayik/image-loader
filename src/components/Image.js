@@ -8,10 +8,10 @@ const Image = ({ id }) => {
   const image = useSelector(state => state.images[id])
   const { tags, webformatURL, webformatWidth, webformatHeight } = image
 
-  const basis = `calc(100% * .2 * ${webformatWidth / webformatHeight})`
+  const ratio = webformatWidth / webformatHeight
 
   return (
-    <StyledImage basis={basis} as={Link} to={`/${id}`}>
+    <StyledImage ratio={ratio} as={Link} to={`/${id}`}>
       <img src={webformatURL} alt={tags} />
     </StyledImage>
   )
@@ -20,7 +20,7 @@ const Image = ({ id }) => {
 export default Image
 
 const StyledImage = styled.div`
-  flex: 1 0 ${p => p.basis};
+  flex: 1 0 calc(18% * ${p => p.ratio});
   max-width: 40%;
   max-height: 20rem;
 
