@@ -31,4 +31,21 @@ const StyledImage = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  @media (max-width: ${p => p.theme.media.large}) {
+    max-width: 60%;
+  }
+
+  @media (max-width: ${p => p.theme.media.medium}) {
+    flex-basis: calc(25% * ${p => p.ratio});
+  }
+
+  @media (max-width: ${p => p.theme.media.small}) {
+    flex-basis: calc(28% * ${p => p.ratio});
+    max-width: 100%;
+  }
+
+  @media (max-width: ${p => p.theme.media.min}) {
+    flex-basis: calc(100% * ${p => p.ratio});
+  }
 `

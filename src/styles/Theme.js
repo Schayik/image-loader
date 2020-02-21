@@ -3,7 +3,8 @@ const THEME = {
         max: '1440px',
         large: '1199px',
         medium: '991px',
-        small: '575px',
+        small: '787px',
+        min: '575px',
     },
     colors: {
         white: '#fff',

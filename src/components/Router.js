@@ -3,14 +3,14 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Navbar from './Navbar'
 import Home from './Home'
-import Detail from './Detail'
+import ImagePage from './ImagePage'
 
 const Router = () => (
   <BrowserRouter>
     <Navbar />
     <Switch>
       <Route path='/:id'>
-        <Detail />
+        <ImagePage />
       </Route>
       <Route path='/'>
         <Home />

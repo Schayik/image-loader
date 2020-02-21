@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 
-import Image from './Image'
+import Image from './ImagePreview'
 
 const ImageList = ({ page }) => {
   const imageIds = useSelector(state => state.pages[page])

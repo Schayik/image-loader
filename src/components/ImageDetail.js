@@ -1,18 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import CompressWrapper from './CompressWrapper'
-import { addImageAction } from '../resources/images'
 
-const Detail = () => {
-
-  const { id } = useParams()
-
-  useEffect(() => {
-    addImageAction(id)
-  }, [id])
+const Detail = ({ id }) => {
 
   const image = useSelector(state => state.images[id])
 
@@ -21,10 +13,10 @@ const Detail = () => {
   const { largeImageURL, user, tags, views, downloads, imageWidth, imageHeight } = image
 
   return (
-    <CompressWrapper>
+    <StyledDetail>
       <h1>{tags}</h1>
       <h2>{user}</h2>
-      <StyledDetail>
+      <div className='wrapper'>
         <div className='image'>
           <img src={largeImageURL} alt={tags} />
         </div>
@@ -34,16 +26,19 @@ const Detail = () => {
           <li>width: <strong>{imageWidth}</strong> px</li>
           <li>height: <strong>{imageHeight}</strong> px</li>
         </ul>
-      </StyledDetail>
-    </CompressWrapper>
+      </div>
+    </StyledDetail>
   )
 }
 
 export default Detail
 
 const StyledDetail = styled.div`
-  display: flex;
-  padding-bottom: 1.5rem;
+
+  .wrapper {
+    display: flex;
+    padding-bottom: 1.5rem;
+  }
 
   .image {
     flex: 1;
@@ -65,6 +60,13 @@ const StyledDetail = styled.div`
       &:not(first-child) {
         margin-top: 2px;
       }
+    }
+  }
+
+  @media (max-width: ${p => p.theme.media.medium}) {
+    flex-direction: column-reverse;
+    .image {
+      margin: 1.5rem 0 0 0;
     }
   }
 `
