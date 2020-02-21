@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
-// import { useQueryParam, NumberParam, StringParam } from 'use-query-params';
+import { useSelector } from 'react-redux'
 
 import Image from './Image'
+import { addPageAction } from '../resources/images'
 
-const App = ({ state, dispatch }) => {
+const Home = () => {
 
-	const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1)
+  const images = useSelector(state => state[page])
 
   const handleClick = newPage => {
     if (newPage < 1) {
@@ -19,39 +20,20 @@ const App = ({ state, dispatch }) => {
   }
   
   useEffect(() => {
-    const fetchImages = async () => {
-
-      const fetchPage = page || 1
-
-      const url = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_KEY}&page=${fetchPage}`
-  
-      const response = await axios.get(url)
-  
-      dispatch({
-        type: 'addPage',
-        hits: response.data.hits,
-        page: fetchPage,
-      })
-    }
-
-    if (!state[page]) {
-      fetchImages()
-    }
-	}, [page])
+    addPageAction(page)
+  }, [page])
 	
-	if (!state[page]) return <p>loading...</p>
-
-	console.log(state)
+	if (!images) return <p>loading...</p>
 
   return (
     <div>
       <button onClick={() => handleClick(page - 1)}>Prev</button>
       <button onClick={() => handleClick(page + 1)}>Next</button>
-      {state[page].map(hit => (
+      {images.map(hit => (
 				<Image key={hit.id} {...hit} />
 			))}
     </div>
   );
 }
 
-export default App;
+export default Home;

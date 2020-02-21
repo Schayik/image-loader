@@ -17,7 +17,6 @@ const Navbar = () => (
 export default Navbar
 
 const StyledNavbar = styled.nav`
-    height: 6rem;
     background-color: ${p => p.theme.colors.background};
     border-bottom: 1px solid ${p => p.theme.colors.border};
 
@@ -25,7 +24,5 @@ const StyledNavbar = styled.nav`
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        height: 100%;
     }
 `

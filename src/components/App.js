@@ -1,32 +1,22 @@
-import React, { useReducer } from 'react';
+import React from 'react';
+import { createStore } from 'redux'
+import { Provider as ReduxProvider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
+import images from '../resources/images'
 import GlobalStyle from '../styles/Globalstyle'
 import THEME from '../styles/Theme'
 import Router from './Router'
 
-const reducer = (state, action) => {
-  switch(action.type) {
-    case 'addPage':
-      return {
-        ...state,
-        [action.page]: action.hits,
-      }
-    default:
-      return state
-  }
-}
+export const store = createStore(images)
 
-const App = () => {
-
-  const [state, dispatch] = useReducer(reducer, {})
-
-  return (
+const App = () => (
+  <ReduxProvider store={store}>
     <ThemeProvider theme={THEME}>
       <GlobalStyle />
-      <Router state={state} dispatch={dispatch} />
+      <Router />
     </ThemeProvider> 
-  )
-}
+  </ReduxProvider>
+)
 
 export default App;
