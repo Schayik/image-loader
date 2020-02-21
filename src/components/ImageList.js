@@ -5,15 +5,15 @@ import { useSelector } from 'react-redux'
 import Image from './Image'
 
 const ImageList = ({ page }) => {
-  const images = useSelector(state => state[page])
-  console.log(images)
+  const imageIds = useSelector(state => state.pages[page])
+  console.log(imageIds)
 
-  if (!images) return <p>loading...</p>
+  if (!imageIds) return <p>loading...</p>
 
   return (
     <StyledList>
-      {images.map(image => (
-        <Image key={image.id} {...image} />
+      {imageIds.map(id => (
+        <Image key={id} id={id} />
       ))}
     </StyledList>
   )

@@ -1,8 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-const Image = ({ id, tags, webformatURL, webformatWidth, webformatHeight }) => {
+const Image = ({ id }) => {
+
+  const image = useSelector(state => state.images[id])
+  const { tags, webformatURL, webformatWidth, webformatHeight } = image
 
   const basis = `calc(100% * .2 * ${webformatWidth / webformatHeight})`
 
