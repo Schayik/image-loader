@@ -20,8 +20,8 @@ const images = (state = {}, action) => {
   switch(action.type) {
     case 'addPage':
       return {
-          ...state,
-          [action.page]: action.hits,
+        ...state,
+        [action.page]: action.hits,
       }
     default:
       return state
