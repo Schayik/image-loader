@@ -1,8 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-const ImageList = () => {
+const ImageList = ({ page }) => {
   const images = useSelector(state => state[page])
+
+  if (!images) return <p>loading...</p>
 
   return (
     <div>
