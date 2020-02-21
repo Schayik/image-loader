@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 
-import CompressWrapper from './CompressWrapper'
-
 const Detail = ({ id }) => {
 
   const image = useSelector(state => state.images[id])
@@ -14,8 +12,8 @@ const Detail = ({ id }) => {
 
   return (
     <StyledDetail>
-      <h1>{tags}</h1>
-      <h2>{user}</h2>
+      <h1 data-testid='tags'>{tags}</h1>
+      <h2 data-testid='user'>{user}</h2>
       <div className='wrapper'>
         <div className='image'>
           <img src={largeImageURL} alt={tags} />

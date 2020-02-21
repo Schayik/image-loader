@@ -15,27 +15,29 @@ const Home = () => {
   }, [page])
 
   return (
-    <main>
+    <StyledHome>
       <CompressWrapper>
         <PageNavigator page={page} setPage={setPage} />
       </CompressWrapper>
-      <StyledHome>
+      <div className='home'>
         <CompressWrapper>
           <ImageList page={page} />
         </CompressWrapper>
-      </StyledHome>
+      </div>
       <CompressWrapper>
         <PageNavigator page={page} setPage={setPage} />
       </CompressWrapper>
-    </main>
+    </StyledHome>
   );
 }
 
 export default Home;
 
 const StyledHome = styled.main`
-  background-color: ${p => p.theme.colors.background};
-  border-top: 1px solid ${p => p.theme.colors.border};
-  border-bottom: 1px solid ${p => p.theme.colors.border};
-  padding: 2rem 0;
+  .home {
+    background-color: ${p => p.theme.colors.background};
+    border-top: 1px solid ${p => p.theme.colors.border};
+    border-bottom: 1px solid ${p => p.theme.colors.border};
+    padding: 2rem 0;
+  }
 `

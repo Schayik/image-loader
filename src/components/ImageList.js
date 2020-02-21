@@ -10,7 +10,7 @@ const ImageList = ({ page }) => {
   if (!imageIds) return <p>loading...</p>
 
   return (
-    <StyledList>
+    <StyledList data-testid='image-list'>
       {imageIds.map(id => (
         <Image key={id} id={id} />
       ))}

@@ -1,5 +1,3 @@
-TODO: improve
-
 ## Requirements
 
 This application will use Pixabay API (http://www.pixabay.com) to fetch images. These will have to be rendered on the page. The UI of this page should consist of a grid layout (for example like Pixabay itself or Unsplash). The content should be visible correctly both in desktop and smartphones. The pagination system for the content of the page will be decided by the developer (page numbers, infinite scroll, etc). 
@@ -8,7 +6,7 @@ A second page should be implemented. This will consist of a detailed view of one
 
 ```
 Pixabay API documentation: https://pixabay.com/api/docs/
-Pixabay Key: <key>
+Pixabay Key: <pixabay-api-key>
 ```
 
 The provided key will let the developer make 5000 API calls per hour. If while testing it, the developer runs out of requests, feel free to create another Pixabay account and use that access key instead. ​Avoid unnecessary requests where possible.
@@ -18,11 +16,16 @@ The app should be fully tested (unit tests) and the code should contain comments
 For styles the developer can use any library/framework he/she likes.
 
 
+## Explanation on Choices
+
+It is often difficult to choose between simplicity or ability to scale. I know this application is not gonna be extended, but I have still used some scalable option to show I am able to do predict and use it.
+
+
 ## Development
 
 1. clone repository: `https://github.com/Schayik/image-loader`
-2. open folder
-3. create `.env` and add `REACT_APP_PIXABAY_KEY`
+2. open folder with editor of command line
+3. create `.env` and add `REACT_APP_PIXABAY_KEY=<pixabay-api-key>`
 4. start development: `yarn start`
 
 
