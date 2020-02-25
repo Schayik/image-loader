@@ -18,7 +18,7 @@ For styles the developer can use any library/framework he/she likes.
 
 ## Explanation on Choices
 
-It is often difficult to choose between simplicity or ability to scale. I know this application is not gonna be extended, but I have still used some scalable option to show I am able to do predict and use it.
+It is often difficult to choose between simplicity or ability to scale. I know this application is not gonna be extended, but I have still used some scalable option to show I am able to do predict and use it. This includes things like a router and redux.
 
 
 ## Development

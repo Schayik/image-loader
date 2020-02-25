@@ -11,7 +11,7 @@ const Image = ({ id }) => {
   const ratio = webformatWidth / webformatHeight
 
   return (
-    <StyledImage ratio={ratio} as={Link} to={`/${id}`}>
+    <StyledImage ratio={ratio} as={Link} to={`/image/${id}`}>
       <img src={webformatURL} alt={tags} />
     </StyledImage>
   )

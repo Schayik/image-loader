@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components'
+import { useParams } from 'react-router-dom'
 
 import CompressWrapper from './CompressWrapper'
 import ImageList from './ImageList'
@@ -8,8 +9,8 @@ import { addPageAction } from '../resources/images'
 
 const Home = () => {
 
-  const [page, setPage] = useState(1)
-  
+  const { page } = useParams()
+
   useEffect(() => {
     addPageAction(page)
   }, [page])
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <StyledHome>
       <CompressWrapper>
-        <PageNavigator page={page} setPage={setPage} />
+        <PageNavigator page={page} />
       </CompressWrapper>
       <div className='home'>
         <CompressWrapper>
@@ -25,7 +26,7 @@ const Home = () => {
         </CompressWrapper>
       </div>
       <CompressWrapper>
-        <PageNavigator page={page} setPage={setPage} />
+        <PageNavigator page={page} />
       </CompressWrapper>
     </StyledHome>
   );

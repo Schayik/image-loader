@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 import Navbar from './Navbar'
 import Home from './Home'
@@ -9,12 +9,13 @@ const Router = () => (
   <BrowserRouter>
     <Navbar />
     <Switch>
-      <Route path='/:id'>
+      <Route path='/image/:id'>
         <ImagePage />
       </Route>
-      <Route path='/'>
+      <Route path='/:page'>
         <Home />
       </Route>
+      <Redirect to="/1" />
     </Switch>
   </BrowserRouter>
 )
