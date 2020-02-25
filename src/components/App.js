@@ -10,11 +10,11 @@ import Router from './Router'
 
 export const store = createStore(images)
 
-const App = () => (
+const App = ({ history }) => (
   <ReduxProvider store={store}>
     <ThemeProvider theme={THEME}>
       <GlobalStyle />
-      <Router />
+      <Router history={history} />
     </ThemeProvider> 
   </ReduxProvider>
 )

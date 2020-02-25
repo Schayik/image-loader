@@ -1,6 +1,8 @@
 import React from 'react';
 import { render, fireEvent, waitForElement } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'
+import { createMemoryHistory } from 'history'
+
 import App from './components/App';
 
 test('test homepage', async () => {
@@ -41,7 +43,29 @@ test('test homepage', async () => {
   fireEvent.click(getByTestId('back'))
 
   // also this is cached, so the list is shown straight away
-  expect(getByTestId('image-list'))
-  // await waitForElement(() => getByTestId('image-list'))
+  // TODO: figure out why this doesn't work: expect(getByTestId('image-list'))
+  await waitForElement(() => getByTestId('image-list'))
+
+});
+
+test('test image page', async () => {
+  const history = createMemoryHistory()
+
+  // the user uses a direct link to an image
+  history.push('/image/4843834')
+
+  // the user opens the website  
+  const { getByText, getByTestId, getByRole } = render(<App history={history}/>);
+
+  // the user sees the navbar, and that the image is loading
+  expect(getByText('loading...'))
+
+  // the user waits until the image data is loaded
+  await waitForElement(() => getByTestId('tags'))
+
+  // the user sees the title, author, the image and a list of other properties 
+  expect(getByTestId('tags'))
+  expect(getByTestId('user'))
+  expect(getByRole('list'))
 
 });

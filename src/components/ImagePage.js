@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 import CompressWrapper from './CompressWrapper'
 import ImageDetail from './ImageDetail'
@@ -8,8 +8,7 @@ import { addImageAction } from '../resources/images'
 
 const ImagePage = () => {
 
-  const history = useHistory()
-  const { id } = useParams()
+  const { id, page } = useParams()
 
   useEffect(() => {
     addImageAction(id)
@@ -18,9 +17,11 @@ const ImagePage = () => {
   return (
     <StyledImagePage>
       <CompressWrapper>
-        <svg data-testid='back' onClick={history.goBack} viewBox="0 0 477.175 477.175">
-          <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225 c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/>
-        </svg>
+        <Link to={`/${page}`}>
+          <svg data-testid='back' viewBox="0 0 477.175 477.175">
+            <path d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225 c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z"/>
+          </svg>
+        </Link>
       </CompressWrapper>
       <div className='detail'>
         <CompressWrapper>
