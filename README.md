@@ -1,3 +1,23 @@
+
+# Image Loader
+
+See deployed version here: [https://image-loader-pim.herokuapp.com/](https://image-loader-pim.herokuapp.com/)
+
+## Development
+
+1. clone repository: `https://github.com/Schayik/image-loader`
+2. open folder with editor of command line `cd image-loader`
+3. create `.env` and add `REACT_APP_PIXABAY_KEY=<pixabay-api-key>`
+4. start development: `yarn start`
+
+## Explanation
+
+Since Image Loader is a relatively simple application, there is no need for a lot of libraries. However, real application often need the ability to scale, so I have added for example Redux and React Router to show that some 'possible future features' could be added easily. Redux is also very useful for memoizing the data to reduce API calls and it helped create the ability to link to a specific image straight away (tested with `test image page`).
+
+Some features that could easily be added because of this are:
+* Add more properties to the pages, like a search or a 'images per search' feature
+* More pages with the React Router
+
 ## Requirements
 
 This application will use Pixabay API (http://www.pixabay.com) to fetch images. These will have to be rendered on the page. The UI of this page should consist of a grid layout (for example like Pixabay itself or Unsplash). The content should be visible correctly both in desktop and smartphones. The pagination system for the content of the page will be decided by the developer (page numbers, infinite scroll, etc). 
@@ -14,23 +34,6 @@ The provided key will let the developer make 5000 API calls per hour. If while t
 The app should be fully tested (unit tests) and the code should contain comments where appropriate.
 
 For styles the developer can use any library/framework he/she likes.
-
-
-## Explanation
-
-Since Image Loader is a relatively simple application, there is no need for a lot of libraries. However, real application often need the ability to scale, so I have added for example Redux and React Router to show that some 'possible future features' could be added easily. Redux is also very useful for memoizing the data to reduce API calls and it helped create the ability to link to a specific image straight away (see test image page).
-
-Some features that could easily be added because of this are:
-* More pages with the React Router
-* Added properties to the pages, like a search or a 'images per search' feature
-
-
-## Development
-
-1. clone repository: `https://github.com/Schayik/image-loader`
-2. open folder with editor of command line
-3. create `.env` and add `REACT_APP_PIXABAY_KEY=<pixabay-api-key>`
-4. start development: `yarn start`
 
 
 <!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
