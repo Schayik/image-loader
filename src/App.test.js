@@ -43,9 +43,7 @@ test('test homepage', async () => {
   fireEvent.click(getByTestId('back'))
 
   // also this is cached, so the list is shown straight away
-  // TODO: figure out why this doesn't work: expect(getByTestId('image-list'))
   expect(getByTestId('image-list'))
-  // await waitForElement(() => getByTestId('image-list'))
 
 });
 
