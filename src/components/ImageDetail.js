@@ -36,35 +36,37 @@ const StyledDetail = styled.div`
   .wrapper {
     display: flex;
     padding-bottom: 1.5rem;
-  }
 
-  .image {
-    flex: 1;
-    margin-right: 1.5rem;
-    img {
-      width: 100%;
+    .image {
+      flex: 1;
+      margin-right: 1.5rem;
+      img {
+        width: 100%;
+      }
     }
-  }
 
-  ul {
-    flex-shrink: 0;
+    ul {
+      flex-shrink: 0;
 
-    list-style: none;
-    padding: 0;
-    margin: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
 
-    li {
-      font-size: 1.2rem;
-      &:not(first-child) {
-        margin-top: 2px;
+      li {
+        font-size: 1.2rem;
+        &:not(first-child) {
+          margin-top: 2px;
+        }
       }
     }
   }
 
   @media (max-width: ${p => p.theme.media.medium}) {
-    flex-direction: column-reverse;
-    .image {
-      margin: 1.5rem 0 0 0;
+    .wrapper {
+      flex-direction: column-reverse;
+      .image {
+        margin: 1.5rem 0 0 0;
+      }
     }
   }
 `
