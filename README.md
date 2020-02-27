@@ -16,9 +16,13 @@ The app should be fully tested (unit tests) and the code should contain comments
 For styles the developer can use any library/framework he/she likes.
 
 
-## Explanation on Choices
+## Explanation
 
-It is often difficult to choose between simplicity or ability to scale. I know this application is not gonna be extended, but I have still used some scalable option to show I am able to do predict and use it. This includes things like a router and redux.
+Since Image Loader is a relatively simple application, there is no need for a lot of libraries. However, real application often need the ability to scale, so I have added for example Redux and React Router to show that some 'possible future features' could be added easily. Redux is also very useful for memoizing the data to reduce API calls and it helped create the ability to link to a specific image straight away (see test image page).
+
+Some features that could easily be added because of this are:
+* More pages with the React Router
+* Added properties to the pages, like a search or a 'images per search' feature
 
 
 ## Development

@@ -44,7 +44,8 @@ test('test homepage', async () => {
 
   // also this is cached, so the list is shown straight away
   // TODO: figure out why this doesn't work: expect(getByTestId('image-list'))
-  await waitForElement(() => getByTestId('image-list'))
+  expect(getByTestId('image-list'))
+  // await waitForElement(() => getByTestId('image-list'))
 
 });
 
@@ -52,7 +53,7 @@ test('test image page', async () => {
   const history = createMemoryHistory()
 
   // the user uses a direct link to an image
-  history.push('/image/4843834')
+  history.push('/4843834')
 
   // the user opens the website  
   const { getByText, getByTestId, getByRole } = render(<App history={history}/>);

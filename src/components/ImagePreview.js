@@ -1,18 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 const Image = ({ id }) => {
 
-  const { page } = useParams()
   const image = useSelector(state => state.images[id])
   const { tags, webformatURL, webformatWidth, webformatHeight } = image
 
   const ratio = webformatWidth / webformatHeight
 
   return (
-    <StyledImage ratio={ratio} as={Link} to={`/${page}/${id}`}>
+    <StyledImage ratio={ratio} as={Link} to={`/${id}`}>
       <img src={webformatURL} alt={tags} />
     </StyledImage>
   )

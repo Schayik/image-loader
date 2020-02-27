@@ -1,5 +1,5 @@
 import React from 'react'
-import { Router as HistoryRouter, BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { Router as HistoryRouter, BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Navbar from './Navbar'
 import Home from './Home'
@@ -12,13 +12,12 @@ const Router = ({ history }) => {
     <RouterComponent history={history}>
       <Navbar />
       <Switch>
-        <Route path='/:page/:id'>
+        <Route path='/:id'>
           <ImagePage />
         </Route>
-        <Route path='/:page'>
+        <Route path='/'>
           <Home />
         </Route>
-        <Redirect to="/1" />
       </Switch>
     </RouterComponent>
   )

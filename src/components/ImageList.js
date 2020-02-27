@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux'
 
 import Image from './ImagePreview'
 
-const ImageList = ({ page }) => {
-  const imageIds = useSelector(state => state.pages[page])
+const ImageList = () => {
+
+  const imageIds = useSelector(state => state.pages[state.pageNumber])
 
   if (!imageIds) return <p>loading...</p>
 

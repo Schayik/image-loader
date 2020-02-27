@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import CompressWrapper from './CompressWrapper'
 import ImageList from './ImageList'
@@ -9,24 +9,24 @@ import { addPageAction } from '../resources/images'
 
 const Home = () => {
 
-  const { page } = useParams()
+  const pageNumber = useSelector(state => state.pageNumber)
 
   useEffect(() => {
-    addPageAction(page)
-  }, [page])
+    addPageAction(pageNumber)
+  }, [pageNumber])
 
   return (
     <StyledHome>
       <CompressWrapper>
-        <PageNavigator page={page} />
+        <PageNavigator />
       </CompressWrapper>
       <div className='home'>
         <CompressWrapper>
-          <ImageList page={page} />
+          <ImageList />
         </CompressWrapper>
       </div>
       <CompressWrapper>
-        <PageNavigator page={page} />
+        <PageNavigator />
       </CompressWrapper>
     </StyledHome>
   );
