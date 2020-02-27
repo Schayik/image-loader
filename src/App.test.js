@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history'
 
 import App from './components/App';
 
-test('test homepage', async () => {
+test('test overal app', async () => {
 
   // the user opens the website  
   const { getByText, getAllByTestId, getByRole, getByTestId } = render(<App />);
