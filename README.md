@@ -12,9 +12,7 @@ See deployed version here: [https://image-loader-pim.herokuapp.com/](https://ima
 
 ## Explanation
 
-Since Image Loader is a relatively simple application, there is no need for a lot of libraries. However, real application often need the ability to scale, so I have added for example Redux and React Router to show that some 'possible future features' could be added easily.
-
-Some features that could easily be added because of this are:
+Since Image Loader is a relatively simple application, there is no need for a lot of libraries. However, real application often need the ability to scale, so I have added for example Redux and React Router to show that some 'possible future features' could be added easily including:
 * Add more properties to the pages, like a search or a 'images per search' feature
 * More pages with the React Router
 
